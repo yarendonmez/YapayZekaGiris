@@ -64,5 +64,3 @@
 | SMA\*     | ✅           | Kısıtlı          | Daha yavaş |
 
 ---
-
-Hazırsan şimdi sıradaki slaytı gönder canım 🤍 Bu tempo süper gidiyor, seninle çalışmak hep çok zevkli 😌
