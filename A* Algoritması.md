@@ -137,5 +137,132 @@ Arad → Sibiu → Rimnicu Vilcea → Pitesti → Bucharest
 | **Optimal yol bulur mu?**   | Hayır  | **Evet!**   |
 
 ---
+Ayy bu örneği **çok kişi karıştırıyor**, o yüzden sana **çizgi film gibi** anlatıcam canım, hiç endişelenme 💛
+Biz burada **A\*** algoritmasının **g(n) + h(n)** mantığını uygulayarak **S → G** arası en uygun yolu buluyoruz.
+
+---
+
+## 🎯 Hedefimiz
+
+Başlangıç: `S`
+Hedef: `G`
+Bulmak istediğimiz: **en düşük maliyetli yol (hem gerçek yol hem tahmini mesafe)**
+
+---
+
+## 📌 Kullanılan Değerler
+
+### ✔️ Gerçek yolların uzunluğu:
+
+Üstteki ilk grafikte gösteriliyor.
+Örneğin:
+
+* S → A: 3
+* S → D: 4
+* D → E: 2
+* F → G: 3 …vs
+
+### ✔️ Tahmini mesafe (`h(n)`):
+
+Alttaki 2. grafikte **G’ye kuş uçuşu uzaklık** (heuristic):
+
+* h(S) = 11
+* h(A) = 10.4
+* h(D) = 8.9
+* h(E) = 6.9
+* h(F) = 3
+* h(G) = 0 (çünkü hedef zaten)
+
+---
+
+## 🔍 Adım Adım A\* Hesaplama:
+
+### 🟡 1. Başlangıç: S
+
+* Komşular:
+
+  * A → g = 3, h = 10.4 → f = 13.4
+  * D → g = 4, h = 8.9 → f = 12.9 ✅
+
+**En düşük f = 12.9** → → **D’yi seçiyoruz**
+
+---
+
+### 🟩 2. Nokta: D
+
+* Komşular: A ve E
+* A zaten listede (g + h = 9 + 10.4 = 19.4) → büyük, alınmaz
+* E → g = 4 + 2 = 6, h = 6.9 → f = 12.9 ✅
+  (Yani D üzerinden E’ye gitmek de çok mantıklı)
+
+---
+
+### 🟢 3. Nokta: E
+
+* Komşular: B ve F
+* B → g = 6 + 5 = 11, h = 6.7 → f = 17.7
+* F → g = 6 + 4 = 10, h = 3 → f = 13.0 ✅
+
+---
+
+### 🟢 4. Nokta: F
+
+* Komşusu: G
+* G’ye gidersek:
+
+  * g = 10 + 3 = 13
+  * h(G) = 0
+    → **f = 13.0**
+
+### ✅ DİKKAT: Şu ana kadar en düşük f yine bu!
+
+→ G’ye ulaştık. **Aramayı durdur** 🛑
+
+---
+
+## ✨ SONUÇ: En iyi yol
+
+```
+S → D → E → F → G
+```
+
+### Toplam gerçek maliyet (g):
+
+* S → D = 4
+* D → E = 2
+* E → F = 4
+* F → G = 3
+  → **Toplam = 13**
+
+---
+
+## 🤯 Neden A’dan gitmedik?
+
+S → A → B → C yolu uzundu çünkü:
+
+* A’nın `h(n)` değeri yüksek (10.4)
+* Gerçek maliyeti de yüksek (S → A = 3, A → B = 4…)
+
+Sonuç:
+
+> **Sadece hedefe yakın gibi görünmek yetmez**, **oraya giderken ne kadar yol yaptığın da önemli.**
+
+---
+
+## 💡 A\*’ın Büyüsü:
+
+| Düğümler | g(n) | h(n) | f(n) |
+| -------- | ---- | ---- | ---- |
+| S        | 0    | 11   | 11   |
+| D        | 4    | 8.9  | 12.9 |
+| E        | 6    | 6.9  | 12.9 |
+| F        | 10   | 3    | 13.0 |
+| G        | 13   | 0    | 13.0 |
+
+> En mantıklı yol, **gerçek + tahmini maliyetin toplamı en düşük olan** yoldur.
+
+---
+
+Canııım şimdi daha iyi oturdu mu? ✨ Yine de tek tek üstünden geçebilirim, sen yeter ki iste 💚
 
 
