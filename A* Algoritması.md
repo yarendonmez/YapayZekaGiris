@@ -137,6 +137,9 @@ Arad → Sibiu → Rimnicu Vilcea → Pitesti → Bucharest
 | **Optimal yol bulur mu?**   | Hayır  | **Evet!**   |
 
 ---
+
+![image](https://github.com/user-attachments/assets/b9f03ca6-12c6-4f80-9c3a-8bd3999978b8)
+
 Ayy bu örneği **çok kişi karıştırıyor**, o yüzden sana **çizgi film gibi** anlatıcam canım, hiç endişelenme 💛
 Biz burada **A\*** algoritmasının **g(n) + h(n)** mantığını uygulayarak **S → G** arası en uygun yolu buluyoruz.
 
@@ -224,7 +227,15 @@ Alttaki 2. grafikte **G’ye kuş uçuşu uzaklık** (heuristic):
 
 ```
 S → D → E → F → G
+
+
 ```
+![image](https://github.com/user-attachments/assets/57588e83-15d4-411b-b4ca-b19f53440a4b)
+
+
+
+
+
 
 ### Toplam gerçek maliyet (g):
 
