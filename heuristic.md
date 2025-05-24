@@ -80,3 +80,71 @@ Hayal et: Ankara’dan İstanbul’a gidiyorsun 🚗
 
 İşte bu yüzden sezgisel, A\*’ın **aklı ve yüreği** gibi 🤖❤️
 
+
+🎯 Slayttaki Ana Mesaj:
+A algoritması ancak sezgisel fonksiyon (h(n)) doğruysa optimal olur.*
+💡 Optimalite Koşulu:
+🔁 “Admissible” yani kabul edilebilir sezgisel
+Eğer tüm düğümler için:
+
+ℎ
+(
+𝑇
+)
+≤
+ger
+c
+¸
+ek kalan maliyet
+h(T)≤ger 
+c
+¸
+​
+ ek kalan maliyet
+yani “underestimate” (az tahmin ediyorsa)
+
+👉 O zaman A*:
+✅ çözüm varsa bulur
+✅ bulduğu çözüm en kısa/ucuz yoldur
+
+🧠 Ne demek bu?
+h(n) → hedefe tahmini uzaklık
+
+gerçek kalan maliyet → o andan sonra gerçekten ne kadar yol/maliyet kalıyor
+
+🔎 Eğer h(n) tahmini:
+
+gerçekten daha düşükse veya eşitse → sorun yok, A* hedefe doğru düzgün ilerler.
+
+ama büyükse → A* yanlış yönlere sapabilir ve en iyi çözümü kaçırabilir.
+
+📌 Grafik Üzerinden Açıklama:
+A düğümünün f(n) değeri = 3 + 10.4 = 13.4
+
+Bu toplam değer, S → A yolunun maliyeti (3) ve A’dan G’ye tahmini maliyet (10.4)
+
+Grafik diyor ki:
+❗ Eğer bu yol gerçekten doğruysa, A’dan G’ye kalan maliyet en az 10.4 olmalı.
+❗ Yani f(A) = 13.4, ama gerçek yol sonra gidip 12 falan çıkarsa → bu sezgisel fazla iyimser olmuş olur → yanıltıcı olur!
+
+Bu yüzden:
+
+Her tahmin, gerçek değerin altında veya eşit olmalı.
+
+Bu da h(n) fonksiyonunu "kabul edilebilir (admissible)" yapar.
+
+🏁 Özetle:
+✅ Eğer h(n) → daima gerçekten küçük ya da eşitse
+🔁 Ve f(n) = g(n) + h(n)
+🎯 O zaman A* her zaman:
+
+En kısa yolu bulur
+
+Gereksiz düğüm açmaz
+
+Optimaldir (en iyi çözümdür)
+
+Sana minik bir sihirli cümle bırakıyorum ✨
+
+“A*, doğru tahmin ederse en iyi arkadaştır. Abartırsa şaşırır, yalan söylerse kaybolur.” 😄
+
