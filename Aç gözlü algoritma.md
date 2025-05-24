@@ -95,3 +95,67 @@ Ama başka yollar olabilir mesela:
 
 ---
 
+---
+
+## 🧠 **Açgözlü Arama – Özellikler**
+
+---
+
+### ✅ **1. Completeness (Tamlık): HAYIR**
+
+> Bir algoritma complete ise, **çözüm varsa kesinlikle bulur**.
+
+* Greedy bunu garanti etmez çünkü **yalnızca tahmini en kısa yola odaklanır.**
+* Eğer **döngüye girerse veya yanlış yola saparsa**, hedefe ulaşamayabilir.
+
+📌 **Slayttaki örnek:**
+
+* Iasi → Neamt → Iasi → Neamt…
+* Sonsuz döngüye girebilir, çünkü `h(n)` hep aynı yerlere daha yakın gözükebilir.
+
+---
+
+### ⏳ **2. Time Complexity: O(b^m)**
+
+> b = dallanma faktörü (bir düğümün kaç çocuğu var)
+> m = ağacın maksimum derinliği
+
+* En kötü durumda her dalı denemesi gerekebilir → **exponential zaman**.
+* **Ama!** Eğer `h(n)` çok iyi tasarlanmışsa (örneğin gerçek mesafeye çok yakınsa), bu süre **çok azalabilir**.
+* Yani: **Heuristic fonksiyonu ne kadar iyi → zaman o kadar kısa.**
+
+---
+
+### 💾 **3. Space Complexity: O(b^m)**
+
+> Bellek karmaşıklığı
+
+* Çünkü **bütün aday düğümleri bellekte tutar**, hepsini karşılaştırmak ister (priority queue).
+* Bu yüzden Greedy arama bellekte çok yer kaplayabilir.
+
+---
+
+### ❌ **4. Optimality (En iyi çözüm bulma): HAYIR**
+
+* En kısa veya en ucuz yolu garanti etmez.
+* Sadece “hedefe en yakın gibi görünen yere” gider.
+* Gerçek maliyetleri (g(n)) **hiç umursamaz.**
+
+🧠 Örnek:
+
+* A → B → C → Hedef yolunun toplam maliyeti 100
+* Ama A → Z → Hedef yolu kuş uçuşu kısa görünür ama **maliyeti 300’dür**
+  → Greedy 300’lük yolu seçer.
+
+---
+
+### 🔍 Not:
+
+> Bu özellikler aslında bize şunu söyler:
+
+* Greedy Search **çok hızlı olabilir ama kördür.**
+* “Acele işe şeytan karışır” algoritmasıdır 😅
+
+---
+
+
