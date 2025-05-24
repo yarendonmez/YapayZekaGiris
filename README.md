@@ -1,0 +1,2 @@
+# YapayZekaGiris
+Ders Notları
